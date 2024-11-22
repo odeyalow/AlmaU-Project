@@ -1,0 +1,14 @@
+<svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip123_24">
+			<rect id="nav btn" width="20.000000" height="20.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip123_24)">
+		<rect id="line" x="1.999756" y="15.138672" width="20.000000" height="4.000000" transform="rotate(-45 1.999756 15.138672)" fill="#F1F3F6" fill-opacity="1.000000"/>
+		<rect id="line" x="4.828369" y="0.999023" width="20.000000" height="4.000000" transform="rotate(45 4.828369 0.999023)" fill="#F1F3F6" fill-opacity="1.000000"/>
+	</g>
+</svg>
