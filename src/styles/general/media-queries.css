@@ -1,0 +1,79 @@
+@media screen and (max-width:770px) {
+    body{
+        overflow: hidden;
+    }
+
+    .header__nav-items{
+        flex-direction: column;
+        gap: 30px;
+        background-color: var(--basic-dark-2);
+
+        position: absolute;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+
+        width: 100%;
+        max-width: 370px;
+        min-height: 100lvh;
+
+        padding: 50px 0 20px;
+        font-size: 15px;
+    }
+    
+    .menu-active{
+        right: 0;
+    }
+
+    .drop-down-menu:first-child{
+        inset: 0;
+    }
+    .lang-btn{
+        font-size: 20px;
+    }
+    .item-link{
+        font-size: 20px;
+        background-color: var(--basic-dark-2);
+    }
+    .item-link:hover{
+        background-color: var(--basic-dark-2);
+    }
+    .wide{
+        font-size: 1em;
+        margin-top: 15px;
+    }
+    .wide .menu-item{
+        padding: 10px 0;
+    }
+    .second{
+        text-align: center;
+        border-top: 3px solid var(--basic-light);
+        padding-top: 30px;
+    }
+    .second:after{
+        top: 30px;
+        right: -30px;
+    }
+    .drop-down-menu:hover > .wide{
+        padding: 0em;
+    }
+    .page-active{
+        border-left: 3.5px solid var(--basic-light);
+        padding-left: 0.5em;
+    }
+    .page-active:before{
+        background: none;
+    }
+    .menu-open__btn{
+        display: block;
+    }
+    .menu-close__btn{
+        display: block;
+        position: absolute;
+        top: 27px;
+        right: 22px;
+    }
+    .menu-close-icon{
+        width: 25px;
+    }
+}
