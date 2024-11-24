@@ -1,9 +1,10 @@
 @media screen and (max-width:770px) {
-    body{
-        overflow: hidden;
+    body {
+        overflow-x: hidden;
     }
 
     .header__nav-items{
+        overflow-x: hidden;
         flex-direction: column;
         gap: 30px;
         background-color: var(--basic-dark-2);
