@@ -1,21 +1,15 @@
 @media screen and (max-width:770px) {
-    body {
-        overflow-x: hidden;
-    }
-
     .header__nav-items{
-        overflow-x: hidden;
         flex-direction: column;
         gap: 30px;
         background-color: var(--basic-dark-2);
 
         position: absolute;
-        top: 0;
-        right: -100%;
+        left: 0;
+        top: -100%;
         z-index: 10;
 
-        width: 100%;
-        max-width: 370px;
+        width: 100vw;
         min-height: 100lvh;
 
         padding: 50px 0 20px;
@@ -23,7 +17,7 @@
     }
     
     .menu-active{
-        right: 0;
+        top: 0;
     }
 
     .drop-down-menu:first-child{
