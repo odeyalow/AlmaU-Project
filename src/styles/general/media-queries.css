@@ -111,6 +111,7 @@
     }
     .contacts__body {
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        place-items: center;
     }
     .contacts__column {
         text-align: center;
