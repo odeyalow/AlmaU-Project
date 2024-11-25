@@ -1,4 +1,5 @@
 @media screen and (max-width:770px) {
+    /* header */
     .header__nav-items{
         flex-direction: column;
         gap: 30px;
@@ -15,11 +16,9 @@
         padding: 50px 0 20px;
         font-size: 15px;
     }
-    
     .menu-active{
         top: 0;
     }
-
     .drop-down-menu:first-child{
         inset: 0;
     }
@@ -70,5 +69,58 @@
     }
     .menu-close-icon{
         width: 25px;
+    }
+    /* header */
+
+    /* contacts */
+    .contacts__content {
+        padding: 3em 25px 5em;
+    }
+    .contacts__header {
+        flex-direction: column;
+        margin-bottom: 4em;
+        gap: 2.5em;
+    }
+    .contacts__decor-line {
+        display: none;
+    }
+    /* contacts */
+}
+
+@media screen and (max-width:550px){
+    .contacts {
+    }
+    .contacts__content {
+    }
+    .contacts__header {
+    }
+    .contacts__title {
+        font-size: 3.6em;
+    }
+    .contacts__decor-line {
+    }
+    .contacts__btn {
+        max-width: 245px;
+        height: 55px;
+    }
+    .contacts__btn--block {
+    }
+    .contacts__btn-text {
+        font-size: 2.4em;
+    }
+    .contacts__btn-img {
+        max-width: 27px;
+    }
+    .contacts__body {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+    .contacts__column {
+        text-align: center;
+    }
+    .contacts__column-title {
+        font-size: 2em;
+    }
+    .contacts__column-text {
+        font-size: 2.5em;
     }
 }
