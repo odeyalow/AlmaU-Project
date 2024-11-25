@@ -29,8 +29,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    opacity: 1;
-    visibility: 1;
 }
 
 .header__nav-items{
@@ -38,6 +36,8 @@ body {
     align-items: center;
     gap: 3em;
     transition: var(--transition-slow);
+    opacity: 1;
+    visibility: visible;
 }
 
 .header__nav-item{
@@ -323,4 +323,8 @@ body {
 }
 .header__logo:hover, .social-icon:hover, .footer__logo:hover{
     opacity: 75%;
+}
+.header__nav-items{
+    opacity: 1;
+    visibility: visible;
 }
