@@ -264,14 +264,14 @@
     font-size: 4em;
     font-weight: 200;
 }
-.contacts a{
+.contacts__link{
     text-decoration: underline;
     text-decoration-color: var(--basic-red);
     transition: var(--transition-fast);
     text-decoration-thickness: 1px;
     text-underline-offset: 5px;
 }
-.contacts a:hover {
+.contacts__link:hover {
     text-decoration-color: var(--basic-light);
 }
 /* CONTACTS */
