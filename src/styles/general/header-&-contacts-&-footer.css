@@ -73,8 +73,7 @@ body {
     background: url('/src/imgs/icons/arrow-2.svg') no-repeat;
 }
 .drop-down-menu:hover > .item__drop-down-menu{
-    visibility: visible;
-    opacity: 100%;
+    opacity: 1;
     padding-top: 3em;
 }
 .drop-down-menu:first-child{
@@ -116,8 +115,7 @@ body {
 
     transform: translateX(-50%);
     transition: var(--transition-fast);
-    opacity: 0%;
-    visibility: hidden;
+    opacity: 0;
 }
 .menu-item{
     font-size: 2em;
