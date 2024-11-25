@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedLangText = document.querySelector('.selected-lang__text'),
         menuOpenBtn = document.querySelector('.menu-open__btn'),
         menuCloseBtn = document.querySelector('.menu-close__btn'),
-        menu = document.querySelector('.header__nav-items');
+        menu = document.querySelector('.header__nav-items'),
+        body = document.body;
 
     langOptions.forEach(option => {
         if (option.classList.contains('active-lang')) {
@@ -33,7 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
         langBtn.style.marginRight="50px"; 
     }
 
-
-    menuOpenBtn.addEventListener('click', () => {menu.classList.add('menu-active')});
-    menuCloseBtn.addEventListener('click', () => {menu.classList.remove('menu-active')});
+    menuOpenBtn.addEventListener('click', () => {
+        menu.classList.add('menu-active');
+        body.classList.add('body-lock');
+    });
+    menuCloseBtn.addEventListener('click', () => {
+        menu.classList.remove('menu-active')
+        body.classList.remove('body-lock');
+    });
 })

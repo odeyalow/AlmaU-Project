@@ -15,6 +15,7 @@
 
         padding: 50px 0 20px;
         font-size: 15px;
+        overflow-y: auto
     }
     .menu-active{
         top: 0;
