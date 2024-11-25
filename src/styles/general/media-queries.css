@@ -101,6 +101,37 @@
 }
 
 @media screen and (max-width:550px){
+    /* hero */
+    .hero{
+        min-height: 500px;
+    }
+    .hero__content{
+        min-height: 100%;
+    }
+    .hero__supertext {
+        font-size: 2.4em;
+    }
+    .hero__title {
+        font-size: 4.8em;
+    }
+    .hero__description {
+        font-size: 2em;
+    }
+    .hero__btn {
+        max-width: 220px;
+        padding: 15px;
+        font-size: 1.4em;
+        margin-bottom: 5em;
+    }
+    .hero__scroll-btn {
+        font-size: 1.8em;
+        gap: 0;
+    }
+    .hero__scroll-icon {
+        max-width: 25px;
+    }
+    /* hero */
+
     /* contacts */
     .contacts__title {
         font-size: 3.6em;
@@ -129,31 +160,6 @@
         font-size: 2.5em;
     }
     /* contacts */
-
-    /* hero */
-    .hero__supertext {
-        font-size: 2.4em;
-    }
-    .hero__title {
-        font-size: 4.8em;
-    }
-    .hero__description {
-        font-size: 2em;
-    }
-    .hero__btn {
-        max-width: 220px;
-        padding: 15px;
-        font-size: 1.4em;
-        margin-bottom: 5em;
-    }
-    .hero__scroll-btn {
-        font-size: 1.8em;
-        gap: 0;
-    }
-    .hero__scroll-icon {
-        max-width: 25px;
-    }
-    /* hero */
 
     /* footer */
     .footer__content {
@@ -195,7 +201,7 @@
         min-width: 300px;
     }
     .menu-open__btn{
-        position: fixed;
+        position: static;
     }
     /* fixed adaptivity */
 }

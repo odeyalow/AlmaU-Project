@@ -2,14 +2,14 @@
 @import url('media-queries.css');
 
 .hero {
-    max-width: 100vw;
-    min-height: 100lvh;
+    max-width: 100lvw;
+    min-height: 100px;
     background-color: var(--basic-dark);
 }
 .hero__content {
     max-width: 1250px;
-    min-height: 100lvh;
-    padding: 5em 25px;
+    min-height: 750px;
+    padding: 7em 25px;
     margin: 0 auto;
     color: var(--basic-light);
     text-align: center;
@@ -42,7 +42,7 @@
     text-wrap: nowrap;
 
     background-color: var(--basic-blue);
-    margin: 0 auto 10em;
+    margin: 0 auto 7em;
     padding: 20px;
     border-radius: 10px;
 
