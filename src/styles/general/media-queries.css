@@ -76,6 +76,12 @@
     }
     /* header */
 
+    /* hero */
+    .hero__content {
+        background-position: center 50px;
+    }
+    /* hero */
+
     /* contacts */
     .contacts__content {
         padding: 3em 25px 5em;
@@ -124,6 +130,31 @@
     }
     /* contacts */
 
+    /* hero */
+    .hero__supertext {
+        font-size: 2.4em;
+    }
+    .hero__title {
+        font-size: 4.8em;
+    }
+    .hero__description {
+        font-size: 2em;
+    }
+    .hero__btn {
+        max-width: 220px;
+        padding: 15px;
+        font-size: 1.4em;
+        margin-bottom: 5em;
+    }
+    .hero__scroll-btn {
+        font-size: 1.8em;
+        gap: 0;
+    }
+    .hero__scroll-icon {
+        max-width: 25px;
+    }
+    /* hero */
+
     /* footer */
     .footer__content {
         -webkit-box-orient: vertical;
@@ -153,13 +184,18 @@
 }
 
 @media screen and (max-width:300px){
+    /* fixed adaptivity */
     body {
         width: 100%;
         min-width: 300px;
         margin: 0 auto;
         overflow-x: hidden;
     }
-    .header, .contacts, .footer{
+    .header, .hero, .contacts, .footer{
         min-width: 300px;
     }
+    .menu-open__btn{
+        position: fixed;
+    }
+    /* fixed adaptivity */
 }
