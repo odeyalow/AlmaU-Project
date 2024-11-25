@@ -195,7 +195,7 @@
         width: 100%;
         min-width: 300px;
         margin: 0 auto;
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
     }
     .header, .hero, .contacts, .footer{
         min-width: 300px;
