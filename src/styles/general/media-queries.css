@@ -101,6 +101,13 @@
 }
 
 @media screen and (max-width:550px){
+    /* header */
+    .header__nav-items{
+        opacity: 1;
+        visibility: visible;
+    }
+    /* header */
+
     /* hero */
     .hero{
         min-height: 500px;

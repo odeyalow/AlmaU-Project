@@ -324,7 +324,3 @@ body {
 .header__logo:hover, .social-icon:hover, .footer__logo:hover{
     opacity: 75%;
 }
-.header__nav-items{
-    opacity: 1;
-    visibility: visible;
-}
