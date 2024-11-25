@@ -29,6 +29,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    opacity: 1;
+    visibility: 1;
 }
 
 .header__nav-items{
@@ -161,7 +163,7 @@ body {
 
 .dropdown-menu-active{
     position: relative;
-    opacity: 100%;
+    opacity: 1;
     visibility: visible;
 }
 
