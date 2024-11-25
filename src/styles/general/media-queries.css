@@ -88,22 +88,13 @@
 }
 
 @media screen and (max-width:550px){
-    .contacts {
-    }
-    .contacts__content {
-    }
-    .contacts__header {
-    }
+    /* contacts */
     .contacts__title {
         font-size: 3.6em;
-    }
-    .contacts__decor-line {
     }
     .contacts__btn {
         max-width: 245px;
         height: 55px;
-    }
-    .contacts__btn--block {
     }
     .contacts__btn-text {
         font-size: 2.4em;
@@ -123,4 +114,5 @@
     .contacts__column-text {
         font-size: 2.5em;
     }
+    /* contacts */
 }
