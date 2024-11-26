@@ -1,6 +1,7 @@
 @import url('vars.css');
 @import url('media-queries.css');
 
+/* hero */
 .hero {
     max-width: 100lvw;
     min-height: 100px;
@@ -72,3 +73,100 @@
 .hero__scroll-btn:hover{
     transform: translateY(15%);
 }
+/* hero */
+
+/* info */
+.info {
+    max-width: 100lvw;
+    background-color: var(--basic-light);
+    color: var(--basic-dark-2);
+    text-align: center;
+    padding: 4.5em 0;
+}
+.info__content {
+    max-width: 1250px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+.info__title {
+    font-size: 4em;
+    font-weight: 600;
+    margin-bottom: 1.5em;
+}
+.info__cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    place-items: center;
+    row-gap: 7em;
+}
+.info__card-link-wrapper:last-child{
+    grid-column: 1/-1;
+}
+.info__card-link-wrapper:nth-child(even) .info__card-body {
+    background-color: var(--basic-red);
+}
+.info__card-link-wrapper:nth-child(even) .info__card {
+    box-shadow: 0 10px 0px 0px var(--basic-red-2);
+}
+.info__card {
+    max-width: 330px;
+    min-height: 300px;
+    border-radius: 25px;
+    box-shadow: 0 10px 0px 0px var(--basic-blue-2);
+    filter: drop-shadow(0 0 5px var(--basic-dark-2));
+    transition: var(--transition-fast);
+}
+.info__card:hover{
+    transform: translateY(-1%);
+    filter: drop-shadow(0 5px 10px var(--basic-dark-2));
+}
+.info__card:active{
+    transform: translateY(0%);
+    filter: drop-shadow(0 0 5px var(--basic-dark-2));
+}
+.info__card:hover .info__card-icon-wrapper{
+    padding: 2em;
+}
+.info__card:hover .info__card-icon{
+    width: 55px;
+}
+.info__card-header {
+    position: relative;
+}
+.info__card-icon-wrapper{
+    position: absolute;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2em;
+    border-radius: 0 25px 0 100%;
+}
+.info__card-icon {
+    transition: var(--transition-fast);
+    width: 40px;
+    position: relative;
+    top: -5px;
+    left: 5px;
+}
+.info__card-img {
+    border-radius: 25px 25px 0 0;
+}
+.info__card-body {
+    background-color: var(--basic-blue);
+    padding: 3em 2em;
+    color: var(--basic-light);
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.info__card-body-title {
+    font-size: 3em;
+    font-weight: 600;
+    line-height: 35px;
+}
+.info__card-body-description {
+    font-size: 1.8em;
+    font-weight: 300;
+    line-height: 30px;
+}
+/* info */

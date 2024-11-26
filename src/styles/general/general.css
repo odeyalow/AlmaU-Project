@@ -50,8 +50,6 @@ body {
     -webkit-transition: var(--transition-slow);
     -o-transition: var(--transition-slow);
     transition: var(--transition-slow);
-    /* opacity: 1;
-    visibility: visible; */
 }
 
 .header__nav-item{
@@ -92,7 +90,7 @@ body {
     right: -1.5em;
     background: url('/src/imgs/icons/arrow-2.svg') no-repeat;
 }
-.drop-down-menu:hover > .item__drop-down-menu{
+.drop-down-menu:hover > .item__drop-down-menu, .drop-down-menu:focus > .item__drop-down-menu{
     opacity: 1;
     padding-top: 3em;
 }
@@ -198,12 +196,6 @@ body {
 
 .active-lang{
     background-color: var(--basic-blue-2);
-}
-
-.dropdown-menu-active{
-    position: relative;
-    /* opacity: 1;
-    visibility: visible; */
 }
 
 .menu-open__btn{
@@ -408,3 +400,4 @@ body {
 .header__logo:hover, .social-icon:hover, .footer__logo:hover{
     opacity: 75%;
 }
+/* ALL */

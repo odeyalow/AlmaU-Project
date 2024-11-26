@@ -101,13 +101,6 @@
 }
 
 @media screen and (max-width:550px){
-    /* header */
-    .header__nav-items{
-        opacity: 1;
-        visibility: visible;
-    }
-    /* header */
-
     /* hero */
     .hero{
         min-height: 500px;
@@ -138,6 +131,13 @@
         max-width: 25px;
     }
     /* hero */
+
+    /* info */
+    .info__cards-container{
+        display: flex;
+        flex-direction: column;
+    }
+    /* info */
 
     /* contacts */
     .contacts__title {
@@ -207,7 +207,7 @@
         margin: 0 auto;
         /* overflow-x: hidden; */
     }
-    .header, .hero, .contacts, .footer{
+    .header, .hero, .info, .contacts, .footer{
         min-width: 300px;
     }
     .menu-open__btn{
