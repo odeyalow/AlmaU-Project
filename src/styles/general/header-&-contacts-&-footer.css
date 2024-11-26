@@ -348,6 +348,9 @@ body {
     -webkit-text-decoration-color: var(--basic-light);
             text-decoration-color: var(--basic-light);
 }
+.contacts a[href^="tel"]{
+    font-size: 4em;
+}
 /* CONTACTS */
 
 /* FOOTER */

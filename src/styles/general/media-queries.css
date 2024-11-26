@@ -166,6 +166,9 @@
     .contacts__column-text {
         font-size: 2.5em;
     }
+    .contacts a[href^="tel"]{
+        font-size: 2em;
+    }
     /* contacts */
 
     /* footer */
