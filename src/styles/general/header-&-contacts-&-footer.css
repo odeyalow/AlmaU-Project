@@ -50,8 +50,8 @@ body {
     -webkit-transition: var(--transition-slow);
     -o-transition: var(--transition-slow);
     transition: var(--transition-slow);
-    opacity: 1;
-    visibility: visible;
+    /* opacity: 1;
+    visibility: visible; */
 }
 
 .header__nav-item{
@@ -202,8 +202,8 @@ body {
 
 .dropdown-menu-active{
     position: relative;
-    opacity: 1;
-    visibility: visible;
+    /* opacity: 1;
+    visibility: visible; */
 }
 
 .menu-open__btn{
