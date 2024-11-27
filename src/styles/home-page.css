@@ -195,6 +195,7 @@
     gap: 2.5em;
 }
 .faq__question {
+    color: var(--basic-dark-2);
     background-color: var(--basic-light-2);
     padding: 3em 4em;
     border-radius: 25px;

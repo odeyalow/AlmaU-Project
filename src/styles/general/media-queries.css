@@ -140,28 +140,18 @@
     /* info */
 
     /* faq */
-    .faq {
-    }
-    .faq__content {
-    }
     .faq__title {
         font-size: 2.4em;
-    }
-    .faq__questions-continer {
     }
     .faq__question {
         padding: 2em;
         border-radius: 15px;
-    }
-    .faq__question-header {
     }
     .faq__question-title {
         font-size: 2em;
     }
     .faq__question-cross-icon {
         width: 30px;
-    }
-    .faq__question-body {
     }
     .faq__question-text {
         font-size: 1.6em;
