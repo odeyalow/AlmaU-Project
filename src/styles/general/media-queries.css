@@ -139,6 +139,36 @@
     }
     /* info */
 
+    /* faq */
+    .faq {
+    }
+    .faq__content {
+    }
+    .faq__title {
+        font-size: 2.4em;
+    }
+    .faq__questions-continer {
+    }
+    .faq__question {
+        padding: 2em;
+        border-radius: 15px;
+    }
+    .faq__question-header {
+    }
+    .faq__question-title {
+        font-size: 2em;
+    }
+    .faq__question-cross-icon {
+        width: 30px;
+    }
+    .faq__question-body {
+    }
+    .faq__question-text {
+        font-size: 1.6em;
+        line-height: 25px;
+    }
+    /* faq */
+
     /* contacts */
     .contacts__title {
         font-size: 3.6em;
@@ -207,7 +237,7 @@
         margin: 0 auto;
         /* overflow-x: hidden; */
     }
-    .header, .hero, .info, .contacts, .footer{
+    .header, .hero, .info, .faq, .contacts, .footer{
         min-width: 300px;
     }
     .menu-open__btn{

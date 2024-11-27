@@ -11,5 +11,6 @@
 
   /* transitions */
   --transition-fast: 0.2s ease;
+  --transition-mid: 0.4s ease;
   --transition-slow: 0.6s ease;
 }
