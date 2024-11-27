@@ -210,17 +210,31 @@ body {
 }
 /* HEADER */
 
+/* devider */
+.sections-devider__wrapper{
+    margin: 7em 0;
+    max-width: 100lvw;
+    height: 3px;
+    padding: 0 25px;
+}
+.sections-devider{
+    max-width: 1200px;
+    height: 100%;
+    background-color: var(--basic-light-2);
+    margin: 0 auto;
+}
+/* devider */
+
 /* FAQ */
 .faq {
     max-width: 100lvw;
-    background-color: var(--basic-light);
 }
 .faq__content {
-    border-top: 3px solid var(--basic-light-2);
     max-width: 1250px;
-    padding: 6.5em 25px;
+    padding: 0 25px 6em;
     margin: 0 auto;
     color: var(--basic-dark-2);
+    
 }
 .faq__title {
     font-size: 4.8em;

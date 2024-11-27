@@ -1,6 +1,9 @@
 @import url('vars.css');
 @import url('media-queries.css');
 
+body{
+    background-color: var(--basic-light);
+}
 .hero {
     max-width: 100lvw;
     min-height: 100px;
@@ -108,10 +111,9 @@
 /* info */
 .info {
     max-width: 100lvw;
-    background-color: var(--basic-light);
     color: var(--basic-dark-2);
     text-align: center;
-    padding: 4.5em 0 6em;
+    padding-top: 4.5em;
 }
 .info__content {
     max-width: 1250px;

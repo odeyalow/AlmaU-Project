@@ -1,2 +1,66 @@
 @import url('vars.css');
 @import url('media-queries.css');
+
+body{
+    background-color: var(--basic-light);
+}
+.hero {
+    color: var(--basic-dark-2);
+    max-width: 100lvw;
+    min-height: 100px;
+}
+.hero__content {
+    max-width: 1250px;
+    min-height: 750px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+.hero__text--block {
+    padding-top: 20em;
+}
+.hero__title {
+    font-size: 9.6em;
+    font-weight: 700;
+}
+.hero__description {
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 30px;
+    max-width: 844px;
+    margin: 25px 0 60px 30px;
+}
+.hero__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    text-wrap: nowrap;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--basic-light);
+    background-color: var(--basic-dark-2);
+    padding: 20px 0;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+.hero__btn:hover .hero__btn-icon {
+    transform: translate(10%, -10%);
+}
+.hero__btn-icon {
+    width: 25px;
+    transition: var(--transition-fast);
+}
+.hero__scroll-btn {
+    color: var(--basic-dark-2);
+    font-size: 2.4em;
+    font-weight: 400;
+    display: flex;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: var(--transition-fast);
+}
+.hero__scroll-btn:hover{
+    transform: translateY(-15%);
+}
+.hero__scroll-icon {
+}

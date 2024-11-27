@@ -76,11 +76,17 @@
     }
     /* header */
 
-    /* hero */
+    /* home page hero */
     .hero__content {
         background-position: center 50px;
     }
-    /* hero */
+    /* home page hero */
+
+    /* instructions page hero */
+    .instructions-page .hero__text--block {
+        padding-top: 12em;
+    }
+    /* instructions page hero */
 
     /* contacts */
     .contacts__content {
@@ -101,7 +107,7 @@
 }
 
 @media screen and (max-width:550px){
-    /* hero */
+    /* home page hero */
     .hero{
         min-height: 500px;
     }
@@ -130,9 +136,24 @@
     .hero__scroll-icon {
         max-width: 25px;
     }
-    /* hero */
+    /* home page hero */
 
-    /* info */
+    /* instructions page hero */
+    .instructions-page .hero__text--block {
+        padding-top: 6em;
+        text-align: center;
+    }
+    .instructions-page .hero__description{
+        margin-left: 0;
+        font-size: 1.6em;
+        line-height: 25px;
+    }
+    .instructions-page .hero__btn{
+        margin: 0 auto 4em  ;
+    }
+    /* instructions page hero */
+
+    /* home page info */
     .info__cards-container{
         display: -webkit-box;
         display: -ms-flexbox;
@@ -142,7 +163,7 @@
             -ms-flex-direction: column;
                 flex-direction: column;
     }
-    /* info */
+    /* home page info */
 
     /* faq */
     .faq__title {
@@ -230,9 +251,8 @@
         width: 100%;
         min-width: 300px;
         margin: 0 auto;
-        /* overflow-x: hidden; */
     }
-    .header, .hero, .info, .faq, .contacts, .footer{
+    .header, .hero, .info, .sections-devider__wrapper, .faq, .contacts, .footer{
         min-width: 300px;
     }
     .menu-open__btn{
