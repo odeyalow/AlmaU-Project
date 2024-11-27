@@ -12,7 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollBtn = document.querySelector('.hero__scroll-btn'),
         infoSection = document.querySelector('.info'),
         scrollBtn2 = document.querySelector('.instructions-page .hero__scroll-btn'),
-        faqSection = document.querySelector('.faq');
+        faqSection = document.querySelector('.faq'),
+        selectBtn = document.querySelector('.instructions__select-btn'),
+        selectOptions = document.querySelectorAll('.instructions__select-option'),
+        expandBtn = document.querySelectorAll('.instructions__info-btn'),
+        popup = document.querySelector('.instructions__image-popup'),
+        instructionsImg = document.querySelectorAll('.instructions__info-img--block'),
+        instructionsImgWrapper = document.querySelectorAll('.instructions__popup-img-wrapper');
 
     langOptions.forEach(option => {
         if (option.classList.contains('active-lang')) {
@@ -48,8 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.remove('body-lock');
     });
 
-    
-
     question.forEach(item => {
         item.addEventListener('click', e => {
           const currentQuestion = e.target.closest('.faq__question');
@@ -73,4 +77,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scrollTo(infoSection, scrollBtn, 'start');
     scrollTo(faqSection, scrollBtn2, 'center');
+
+    selectBtn.addEventListener('click', () => {
+        selectOptions.forEach(item => {
+            item.classList.toggle('option-active'); 
+        })
+    })
+
+    selectOptions.forEach(item => {
+        item.addEventListener('click', e => {
+            selectBtn.textContent = e.target.textContent;
+            selectOptions.forEach(item => {
+                item.classList.toggle('option-active'); 
+            })
+        })
+    })
+
+    expandBtn.forEach(item => {
+        item.addEventListener('click', e => {
+            let btnText = e.target.closest('.instructions__info-btn').children[0],
+                btnIcon = e.target.closest('.instructions__info-btn').children[1],
+                instructionsBody = e.target.closest('.instructions__info--block').children[1];
+
+            btnText.textContent === 'Подробнее' ? btnText.textContent = 'Скрыть' : btnText.textContent = 'Подробнее';
+            btnIcon.classList.toggle('btn-icon-active');
+            if (instructionsBody.style.maxHeight) {
+                instructionsBody.style.maxHeight = null;
+            } else {
+                instructionsBody.style.maxHeight = instructionsBody.scrollHeight + "px";
+            }
+        })
+    })
+
+    instructionsImg.forEach(item => {
+        item.addEventListener('click', e => {
+            popup.classList.toggle('popup-active');
+            body.classList.toggle('body-lock');
+        })
+    })
+
+    instructionsImgWrapper.forEach(item => {
+        item.addEventListener('click', e => {
+            popup.classList.toggle('popup-active');
+            body.classList.toggle('body-lock');
+        })
+    })
 })
