@@ -7,7 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
         menuOpenBtn = document.querySelector('.menu-open__btn'),
         menuCloseBtn = document.querySelector('.menu-close__btn'),
         menu = document.querySelector('.header__nav-items'),
-        body = document.body;
+        body = document.body,
+        question = document.querySelectorAll('.faq__question'),
+        scrollBtn = document.querySelector('.hero__scroll-btn'),
+        infoSection = document.querySelector('.info'),
+        scrollBtn2 = document.querySelector('.instructions-page .hero__scroll-btn'),
+        faqSection = document.querySelector('.faq');
 
     langOptions.forEach(option => {
         if (option.classList.contains('active-lang')) {
@@ -42,4 +47,30 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.classList.remove('menu-active')
         body.classList.remove('body-lock');
     });
+
+    
+
+    question.forEach(item => {
+        item.addEventListener('click', e => {
+          const currentQuestion = e.target.closest('.faq__question');
+           currentQuestion.children[0].children[1].classList.toggle('question__cross-active');
+           if (currentQuestion.children[1].style.maxHeight) {
+               currentQuestion.children[1].style.maxHeight = null;
+           } else {
+               currentQuestion.children[1].style.maxHeight = currentQuestion.children[1].scrollHeight + "px";
+           }
+       }) 
+    });
+
+    const scrollTo = (element, btn, block) => {
+        btn.addEventListener('click', () => {
+            element.scrollIntoView({
+                block: block,
+                behavior:'smooth'
+            });
+        })
+    }
+
+    scrollTo(infoSection, scrollBtn, 'start');
+    scrollTo(faqSection, scrollBtn2, 'center');
 })
