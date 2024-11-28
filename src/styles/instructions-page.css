@@ -6,6 +6,7 @@ body{
     background-image: url('../imgs/general/decor-light.svg');
     background-repeat: no-repeat;
     background-position: top 200px right;
+    background-size: 60vw;
 }
 
 /* hero */
@@ -73,7 +74,7 @@ body{
 .instructions {
     max-width: 100lvw;
     color: var(--basic-dark-2);
-    margin-bottom: 17em;
+    margin: 5em 0 17em;
 }
 .instructions p {
     font-size: 20px;
@@ -102,7 +103,7 @@ body{
     background-size: 35px;
     background-repeat: no-repeat;
     border-radius: 15px;
-    border: 2px solid var(--basic-dark-2);
+    border: 3px solid var(--basic-dark-2);
     cursor: pointer;
     position: relative;
 }
@@ -111,6 +112,7 @@ body{
     flex-direction: column;
     position: absolute;
     z-index: 99;
+    
 }
 .instructions__select-option {
     font-size: 2.5em;
@@ -120,6 +122,9 @@ body{
     background-color: var(--basic-blue);
     visibility: hidden;
     opacity: 0;
+    border: 3px solid var(--basic-blue-2);
+    border-top: none;
+    border-bottom: none;
 }
 .option-active{
     visibility: visible;
@@ -131,9 +136,13 @@ body{
 .instructions__select-option:nth-child(2){
     margin-top: 10px;
     border-radius: 15px 15px 0 0;
+    border: 3px solid var(--basic-blue-2);
+    border-bottom: none;
 }
 .instructions__select-option:last-child{
     border-radius: 0 0 15px 15px;
+    border: 3px solid var(--basic-blue-2);
+    border-top: none;
 }
 .instructions__select-option:hover {
     font-size: 2.5em;
@@ -157,7 +166,7 @@ body{
     display: flex;
     align-items: end;
     gap: 2.5em;
-    margin: -25px 0 0;
+    margin-top: -25px;
 }
 .instructions__header-icon {
     background-color: var(--basic-blue);
@@ -224,7 +233,7 @@ body{
 }
 .instructions__image-popup{
     width: 100lvw;
-    height: 100lvh;
+    height: 100dvh;
     background-color: rgb(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
@@ -264,7 +273,7 @@ body{
     transform: rotate(180deg);
 }
 .img-opened{
-    height: 90lvh;
+    height: 90dvh;
     max-width: 100%;
     border-radius: none;
 }

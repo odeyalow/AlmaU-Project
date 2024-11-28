@@ -88,6 +88,13 @@
     }
     /* instructions page hero */
 
+    /* instructions page body */
+    body{
+        background-position: left 200px;
+        background-size: 125vw;
+    }
+    /* instructions page body */
+    
     /* contacts */
     .contacts__content {
         padding: 3em 25px 5em;
@@ -164,6 +171,105 @@
                 flex-direction: column;
     }
     /* home page info */
+
+    /* instructions page body */
+    body{
+        background-image: none;
+    }
+    /* instructions page body */
+
+    /* instructions */
+    .mobile-devider{
+        display: block;
+    }
+    .instructions{
+        margin-bottom: 0;
+    }
+    .instructions__title {
+        font-size: 2.4em;
+    }
+    .instructions__select-options {
+        position: static;
+        width: 100%;
+    }
+    .instructions__select-btn {
+        font-size: 2em;
+        padding: 10px 15px;
+        text-align: left;
+    }
+    .instructions__select-option {
+        text-align: left;
+        font-size: 2em;
+        padding: 10px 15px;
+        z-index: 98;
+    }
+    .instructions__info--block {
+        margin: -5em 0 9em;
+        padding: 0 20px;
+    }
+    .instructions__header {
+        margin-top: -15px;
+    }
+    .instructions__header-icon {
+        width: 55px;
+        padding: 15px;
+    }
+    .instructions__header-title {
+        font-size: 1.8em;
+    }
+    .instructions p {
+        font-size: 1.4em;
+        line-height: 20px;
+        margin: 20px 0;
+    }
+    .instructions__info-img--block {
+        margin: 15px 0;
+        padding: 0;
+    }
+    .instructions__info-btn {
+        margin: 15px auto;
+    }
+    .instructions__info-btn-text {
+        font-size: 1.6em;
+    }
+    .instructions__info-btn-icon {
+        width: 20px;
+    }
+    .instructions__cards-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .instructions__card {
+        padding: 0 20px;
+        margin: -5em 0 9em;
+    }
+    .instructions__card:last-child{
+        margin-bottom: 0;
+    }
+    .instructions__card--header {
+    }
+    .instructions__card-icon {
+    }
+    .instructions__card--body {
+    }
+    .instructions__card-description {
+    }
+    .instructions__card-btn {
+        padding: 15px 0;
+        font-size: 1.8em;
+    }
+    .instructions__cards-file {
+    }
+    .instructions__card-btn-icon {
+        width: 20px;
+    }
+    .instructions__image-popup {
+    }
+    .instructions__popup-img-wrapper {
+    }
+    .instructions__popup-collapse-icon {
+    }
+    /* instructions */
 
     /* faq */
     .faq__title {
@@ -252,7 +358,7 @@
         min-width: 300px;
         margin: 0 auto;
     }
-    .header, .hero, .info, .sections-devider__wrapper, .faq, .contacts, .footer{
+    .header, .hero, .info, .instructions, .sections-devider__wrapper, .faq, .contacts, .footer{
         min-width: 300px;
     }
     .menu-open__btn{

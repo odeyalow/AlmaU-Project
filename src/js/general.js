@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (instructionsBody.clientHeight == infoArticleText.clientHeight + 20) {
                 instructionsBody.style.maxHeight = instructionsBody.scrollHeight + 'px'
             } else {
-                instructionsBody.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px'   ;
+                instructionsBody.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px';
             }
         })
     })
