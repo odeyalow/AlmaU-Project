@@ -236,8 +236,13 @@
         width: 20px;
     }
     .instructions__cards-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .instructions__card {
         padding: 0 20px;
@@ -246,28 +251,12 @@
     .instructions__card:last-child{
         margin-bottom: 0;
     }
-    .instructions__card--header {
-    }
-    .instructions__card-icon {
-    }
-    .instructions__card--body {
-    }
-    .instructions__card-description {
-    }
     .instructions__card-btn {
         padding: 15px 0;
         font-size: 1.8em;
     }
-    .instructions__cards-file {
-    }
     .instructions__card-btn-icon {
         width: 20px;
-    }
-    .instructions__image-popup {
-    }
-    .instructions__popup-img-wrapper {
-    }
-    .instructions__popup-collapse-icon {
     }
     /* instructions */
 

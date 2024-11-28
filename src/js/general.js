@@ -124,9 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     })
-
     
-
     infoBlockBody.forEach(item => {
         const infoArticleText = item.firstElementChild;
         item.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px';
