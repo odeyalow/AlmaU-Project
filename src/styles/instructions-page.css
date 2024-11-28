@@ -3,6 +3,9 @@
 
 body{
     background-color: var(--basic-light);
+    background-image: url('../imgs/general/decor-light.svg');
+    background-repeat: no-repeat;
+    background-position: top 200px right;
 }
 
 /* hero */
@@ -70,6 +73,7 @@ body{
 .instructions {
     max-width: 100lvw;
     color: var(--basic-dark-2);
+    margin-bottom: 17em;
 }
 .instructions p {
     font-size: 20px;
@@ -121,6 +125,9 @@ body{
     visibility: visible;
     opacity: 1;
 }
+.option-selected{
+    background-color: var(--basic-blue-2);
+}
 .instructions__select-option:nth-child(2){
     margin-top: 10px;
     border-radius: 15px 15px 0 0;
@@ -132,6 +139,10 @@ body{
     font-size: 2.5em;
     padding: 15px;
     background-color: var(--basic-blue-2);
+}
+.instructions__info--tab{
+    transition: var(--transition-mid);
+    display: none;
 }
 .instructions__info--block {
     background-color: var(--basic-light-2);
@@ -196,12 +207,20 @@ body{
     align-items: center;
     margin: 20px auto;
     cursor: pointer;
+    transition: var(--transition-fast);
 }
 .instructions__info-btn-text{
     font-size: 24px;
 }
+.instructions__info-btn:hover{
+    transform: translateY(10%);
+}
+.instructions__info-btn-active:hover{
+    transform: none;
+    transform: translateY(-10%);
+}
 .instructions__info-btn-icon{
-    transition: var(--transition-mid);
+    transition: var(--transition-fast);
 }
 .instructions__image-popup{
     width: 100lvw;
@@ -303,5 +322,8 @@ body{
 .instructions__card-btn-icon {
     transition: var(--transition-fast);
     width: 25px;
+}
+.tab-active{
+    display: block;
 }
 /* instructions */

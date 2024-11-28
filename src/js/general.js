@@ -14,14 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollBtn2 = document.querySelector('.instructions-page .hero__scroll-btn'),
         faqSection = document.querySelector('.faq'),
         selectBtn = document.querySelector('.instructions__select-btn'),
-        selectOptions = document.querySelectorAll('.instructions__select-option'),
         infoBlockBody = document.querySelectorAll('.instructions__info--body'),
         expandBtn = document.querySelectorAll('.instructions__info-btn'),
         popup = document.querySelector('.instructions__image-popup'),
         instructionsImg = document.querySelectorAll('.instructions__info-img--block'),
         instructionsImgWrapper = document.querySelector('.instructions__popup-img-wrapper'),
         instructionsCards = document.querySelectorAll('.instructions__card'),
-        instructionsCardsFiles = document.querySelectorAll('.instructions__cards-file');
+        instructionsCardsFiles = document.querySelectorAll('.instructions__cards-file'),
+        selectOptionsParent = document.querySelector('.instructions__select-options'),
+        instructionsInfoTabs = document.querySelectorAll('.instructions__info--tab');
 
     langOptions.forEach(option => {
         if (option.classList.contains('active-lang')) {
@@ -81,20 +82,50 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTo(infoSection, scrollBtn, 'start');
     scrollTo(faqSection, scrollBtn2, 'center');
 
-    selectBtn.addEventListener('click', () => {
+    for (let i = 1; i < instructionsInfoTabs.length; i++) {
+        selectOptionsParent.insertAdjacentHTML('beforeend', `<button class="instructions__select-option">Пример ${i+1}</button>`);
+    }
+
+    let selectOptions = Array.from(selectOptionsParent.children);
+
+    const toggleOptions = () => {
         selectOptions.forEach(item => {
             item.classList.toggle('option-active'); 
         })
-    })
+    }
 
-    selectOptions.forEach(item => {
-        item.addEventListener('click', e => {
-            selectBtn.textContent = e.target.textContent;
-            selectOptions.forEach(item => {
+    selectBtn.addEventListener('click', () => {
+        selectOptions.forEach(item => {
+            if(item.classList.contains('instructions__select-option')){
                 item.classList.toggle('option-active'); 
-            })
+                toggleOptions();
+            }
         })
     })
+
+    selectOptions.forEach(item => { 
+        item.addEventListener('click', e => {
+            if(item.classList.contains('instructions__select-option')){
+                selectOptions.forEach(item => item.classList.remove('option-selected'))
+                selectBtn.textContent = e.target.textContent;
+                toggleOptions();
+                e.target.classList.add('option-selected');
+
+                for(let i = 0; i < selectOptions.length; i++){
+                    if (selectOptions[i].classList.contains('option-selected')){
+                        instructionsInfoTabs.forEach(item => item.classList.remove('tab-active'));
+                        instructionsInfoTabs[i-1].classList.add('tab-active');
+                        infoBlockBody.forEach(item => {
+                            const infoArticleText = item.firstElementChild;
+                            item.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px';
+                        })
+                    }
+                }
+            }
+        })
+    })
+
+    
 
     infoBlockBody.forEach(item => {
         const infoArticleText = item.firstElementChild;
@@ -103,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     expandBtn.forEach(item => { 
         item.addEventListener('click', e => {
+            item.classList.toggle('instructions__info-btn-active');
             let btnText = e.target.closest('.instructions__info-btn').children[0],
                 btnIcon = e.target.closest('.instructions__info-btn').children[1],
                 instructionsBody = e.target.closest('.instructions__info--block').children[1],
@@ -112,9 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnIcon.classList.toggle('btn-icon-active');
             if (instructionsBody.clientHeight == infoArticleText.clientHeight + 20) {
                 instructionsBody.style.maxHeight = instructionsBody.scrollHeight + 'px'
-                console.log('открыли')
             } else {
-                console.log('закрыли')
                 instructionsBody.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px'   ;
             }
         })
