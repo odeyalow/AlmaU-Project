@@ -15,10 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         faqSection = document.querySelector('.faq'),
         selectBtn = document.querySelector('.instructions__select-btn'),
         selectOptions = document.querySelectorAll('.instructions__select-option'),
+        infoBlockBody = document.querySelectorAll('.instructions__info--body'),
         expandBtn = document.querySelectorAll('.instructions__info-btn'),
         popup = document.querySelector('.instructions__image-popup'),
         instructionsImg = document.querySelectorAll('.instructions__info-img--block'),
-        instructionsImgWrapper = document.querySelectorAll('.instructions__popup-img-wrapper');
+        instructionsImgWrapper = document.querySelector('.instructions__popup-img-wrapper');
 
     langOptions.forEach(option => {
         if (option.classList.contains('active-lang')) {
@@ -93,33 +94,44 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
+    infoBlockBody.forEach(item => {
+        const infoArticleText = item.firstElementChild;
+        item.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px';
+    })
+
     expandBtn.forEach(item => {
         item.addEventListener('click', e => {
             let btnText = e.target.closest('.instructions__info-btn').children[0],
                 btnIcon = e.target.closest('.instructions__info-btn').children[1],
-                instructionsBody = e.target.closest('.instructions__info--block').children[1];
+                instructionsBody = e.target.closest('.instructions__info--block').children[1],
+                infoArticleText = instructionsBody.firstElementChild;
 
             btnText.textContent === 'Подробнее' ? btnText.textContent = 'Скрыть' : btnText.textContent = 'Подробнее';
             btnIcon.classList.toggle('btn-icon-active');
-            if (instructionsBody.style.maxHeight) {
-                instructionsBody.style.maxHeight = null;
+            if (instructionsBody.clientHeight == infoArticleText.clientHeight + 20) {
+                instructionsBody.style.maxHeight = instructionsBody.scrollHeight + 'px'
+                console.log('открыли')
             } else {
-                instructionsBody.style.maxHeight = instructionsBody.scrollHeight + "px";
+                console.log('закрыли')
+                instructionsBody.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px'   ;
             }
         })
     })
 
     instructionsImg.forEach(item => {
         item.addEventListener('click', e => {
+            let clonedImg = e.target.cloneNode();
+            clonedImg.classList.add('img-opened');
+            instructionsImgWrapper.prepend(clonedImg)
             popup.classList.toggle('popup-active');
             body.classList.toggle('body-lock');
         })
     })
 
-    instructionsImgWrapper.forEach(item => {
-        item.addEventListener('click', e => {
-            popup.classList.toggle('popup-active');
-            body.classList.toggle('body-lock');
-        })
+    instructionsImgWrapper.addEventListener('click', e => {
+        e.target.classList.remove('img-opened');
+        instructionsImgWrapper.firstElementChild.remove();
+        popup.classList.toggle('popup-active');
+        body.classList.toggle('body-lock');
     })
 })
