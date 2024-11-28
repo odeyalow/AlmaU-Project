@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         expandBtn = document.querySelectorAll('.instructions__info-btn'),
         popup = document.querySelector('.instructions__image-popup'),
         instructionsImg = document.querySelectorAll('.instructions__info-img--block'),
-        instructionsImgWrapper = document.querySelector('.instructions__popup-img-wrapper');
+        instructionsImgWrapper = document.querySelector('.instructions__popup-img-wrapper'),
+        instructionsCards = document.querySelectorAll('.instructions__card'),
+        instructionsCardsFiles = document.querySelectorAll('.instructions__cards-file');
 
     langOptions.forEach(option => {
         if (option.classList.contains('active-lang')) {
@@ -99,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px';
     })
 
-    expandBtn.forEach(item => {
+    expandBtn.forEach(item => { 
         item.addEventListener('click', e => {
             let btnText = e.target.closest('.instructions__info-btn').children[0],
                 btnIcon = e.target.closest('.instructions__info-btn').children[1],
@@ -133,5 +135,21 @@ document.addEventListener('DOMContentLoaded', () => {
         instructionsImgWrapper.firstElementChild.remove();
         popup.classList.toggle('popup-active');
         body.classList.toggle('body-lock');
+    })
+
+    if (instructionsCards.length % 2 !== 0) {
+        instructionsCards[0].parentElement.lastElementChild.style.gridColumn = "1/-1";
+    }
+
+    instructionsCardsFiles.forEach(item => {
+        item.addEventListener('click', e => {
+            e.preventDefault();
+            let fileTitle = e.target.closest('.instructions__card').children[0].children[1].textContent,
+                itemClone = item.cloneNode();
+            itemClone.download = fileTitle;
+            document.body.appendChild(itemClone);
+            itemClone.click();
+            document.body.removeChild(itemClone);
+        })
     })
 })
