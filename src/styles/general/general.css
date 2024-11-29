@@ -6,6 +6,11 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.body-nav-lock {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+}
 .body-lock {
     overflow: hidden;
     width: 100%;
@@ -474,6 +479,20 @@ body {
     text-align: right;
 }
 /* FOOTER */
+
+/* SIDE BUTTONS */
+.side__btns--block {
+    display: flex;
+    flex-direction: column;
+}
+.scroll-to-top__btn {
+    max-width: 80px;
+    height: 80px;
+    background-color: var(--basic-blue);
+}
+.support__btn {
+}
+/* SIDE BUTTONS */
 
 /* ALL */
 .header__logo, .footer__logo, .social-icon{

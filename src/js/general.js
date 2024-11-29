@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         instructionsCards = document.querySelectorAll('.instructions__card'),
         instructionsCardsFiles = document.querySelectorAll('.instructions__cards-file'),
         selectOptionsParent = document.querySelector('.instructions__select-options'),
-        instructionsInfoTabs = document.querySelectorAll('.instructions__info--tab');
+        instructionsInfoTabs = document.querySelectorAll('.instructions__info--tab'),
+        infoBtnTexts = document.querySelectorAll('.instructions__info-btn-text');
+
 
     langOptions.forEach(option => {
         if (option.classList.contains('active-lang')) {
@@ -51,11 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuOpenBtn.addEventListener('click', () => {
         menu.classList.add('menu-active');
-        body.classList.add('body-lock');
+        body.classList.add('body-nav-lock');
     });
     menuCloseBtn.addEventListener('click', () => {
         menu.classList.remove('menu-active')
-        body.classList.remove('body-lock');
+        body.classList.remove('body-nav-lock');
     });
 
     question.forEach(item => {
@@ -118,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         infoBlockBody.forEach(item => {
                             const infoArticleText = item.firstElementChild;
                             item.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px';
+                            infoBtnTexts.forEach(item => item.textContent = 'Подробнее');
                         })
                     }
                 }
