@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })
 
+    let langBtnActive = false;
+
     const onItemFocus = (focusItem, dropMenu) => {
         let isMouseDown = false;
         focusItem.addEventListener('mousedown', () => {
@@ -87,14 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             isMouseDown = false;
         })
-
-        focusItem.addEventListener('touchstart', () => {
-            if (!isMouseDown) {
-                dropMenu.style.visibility="visible";
-                dropMenu.style.opacity="1";
-                dropMenu.style.paddingTop="3em";
-            }
-        })
     }
     const onItemBlur = (blurItem, dropMenu) => {
         let isMouseDown = false;
@@ -106,13 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 dropMenu.style.visibility="hidden";
                 dropMenu.style.opacity="0";
                 dropMenu.style.paddingTop="0";
-            }
-        })
-        blurItem.addEventListener('touchstart', () => {
-            if (!isMouseDown) {
-                dropMenu.style.visibility="visible";
-                dropMenu.style.opacity="1";
-                dropMenu.style.paddingTop="3em";
             }
         })
     }
