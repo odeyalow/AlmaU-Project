@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         menuCloseBtn = document.querySelector('.menu-close__btn'),
         menu = document.querySelector('.header__nav-items'),
         body = document.body,
-        question = document.querySelectorAll('.faq__question');
+        question = document.querySelectorAll('.faq__question'),
+        scrollToTopBtn = document.querySelector('.scroll-to-top__btn');
 
     langOptions.forEach(option => {
         if (option.classList.contains('active-lang')) {
@@ -55,4 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
            }
        }) 
     });
+
+    scrollToTopBtn.addEventListener('click', () => {
+        body.scrollIntoView({
+            block: 'start',
+            behavior:'smooth'
+        });
+    })
 })

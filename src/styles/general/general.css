@@ -220,6 +220,7 @@ body {
     max-width: 100lvw;
     height: 3px;
     padding: 0 25px;
+    
 }
 .sections-devider{
     max-width: 1200px;
@@ -495,6 +496,9 @@ body {
     max-width: 80px;
     height: 80px;
     background-color: var(--basic-light-2);
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition-fast);
 }
 .side__btn{
     cursor: pointer;
@@ -514,6 +518,11 @@ body {
 }
 .scroll-to-top__btn .btn-icon {
     transform: rotate(-90deg);
+}
+.scroll-to-top__btn-active{
+    visibility: visible;
+    opacity: 1;
+    transition: var(--transition-fast);
 }
 /* SIDE BUTTONS */
 

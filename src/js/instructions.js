@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         selectOptionsParent = document.querySelector('.instructions__select-options'),
         instructionsInfoTabs = document.querySelectorAll('.instructions__info--tab'),
         infoBtnTexts = document.querySelectorAll('.instructions__info-btn-text'),
-        instructionsPageHero = document.querySelector('.instructions-page');
+        pageHero = document.querySelector('.hero'),
+        sideBtnScroll = document.querySelector('.scroll-to-top__btn');
 
         scrollBtn2.addEventListener('click', () => {
             faqSection.scrollIntoView({
@@ -122,4 +123,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.removeChild(itemClone);
             })
         })
+
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                sideBtnScroll.classList.remove('scroll-to-top__btn-active')
+                } else {
+                sideBtnScroll.classList.add('scroll-to-top__btn-active')
+                }
+            });
+        };
+    
+        const observerOptions = {
+            root: null,
+            threshold: 0,
+        };
+        
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+        observer.observe(pageHero);
 })
