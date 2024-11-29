@@ -493,24 +493,22 @@ body {
     right: 3em;
 }
 .scroll-to-top__btn {
-    max-width: 80px;
-    height: 80px;
     background-color: var(--basic-light-2);
     visibility: hidden;
     opacity: 0;
     transition: var(--transition-fast);
 }
 .side__btn{
+    max-width: 80px;
+    height: 80px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center ;
     border-radius: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 .support__btn {
-    max-width: 80px;
-    height: 80px;
     background-color: var(--basic-blue);
 }
 .btn-icon{
