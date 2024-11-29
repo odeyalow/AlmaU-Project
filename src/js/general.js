@@ -74,8 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })
 
-    let langBtnActive = false;
-
     const onItemFocus = (focusItem, dropMenu) => {
         let isMouseDown = false;
         focusItem.addEventListener('mousedown', () => {
