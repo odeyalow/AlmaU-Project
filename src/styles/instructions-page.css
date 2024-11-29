@@ -83,9 +83,9 @@ body{
     transition: var(--transition-fast);
 }
 .hero__scroll-btn:hover{
-    -webkit-transform: translateY(-15%);
-        -ms-transform: translateY(-15%);
-            transform: translateY(-15%);
+    -webkit-transform: translateY(15%);
+        -ms-transform: translateY(15%);
+            transform: translateY(15%);
 }
 /* hero */
 

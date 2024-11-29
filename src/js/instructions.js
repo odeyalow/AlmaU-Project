@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body,
         faqSection = document.querySelector('.faq'),
-        infoSection = document.querySelector('.info'),
         scrollBtn2 = document.querySelector('.instructions-page .hero__scroll-btn'),
         selectBtn = document.querySelector('.instructions__select-btn'),
         infoBlockBody = document.querySelectorAll('.instructions__info--body'),
+        infoBlockImgs = document.querySelectorAll('.instructions__info-placeholder-img'),
         expandBtn = document.querySelectorAll('.instructions__info-btn'),
         popup = document.querySelector('.instructions__image-popup'),
         instructionsImg = document.querySelectorAll('.instructions__info-img--block'),
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
         for (let i = 1; i < instructionsInfoTabs.length; i++) {
-            selectOptionsParent.insertAdjacentHTML('beforeend', `<button class="instructions__select-option">Пример ${i+1}</button>`);
+            selectOptionsParent.insertAdjacentHTML('beforeend', `<button tabindex=${19+i} class="instructions__select-option">Пример ${i+1}</button>`);
         }
     
         let selectOptions = Array.from(selectOptionsParent.children);
@@ -72,6 +72,40 @@ document.addEventListener('DOMContentLoaded', () => {
             const infoArticleText = item.firstElementChild;
             item.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px';
         })
+
+        const onInfoImgFocusBlur = (target) => {
+            let eventParent = target.closest('.instructions__info--block'),
+                btnText = eventParent.children[2].children[0],
+                btnIcon = eventParent.children[2].children[1],
+                instructionsBody = eventParent.children[1],
+                infoArticleText = instructionsBody.firstElementChild;
+                
+            btnText.textContent === 'Подробнее' ? btnText.textContent = 'Скрыть' : btnText.textContent = 'Подробнее';
+            btnIcon.classList.toggle('btn-icon-active');
+            if (instructionsBody.clientHeight == infoArticleText.clientHeight + 20) {
+                instructionsBody.style.maxHeight = instructionsBody.scrollHeight + 'px'
+            } else {
+                instructionsBody.style.maxHeight = (infoArticleText.scrollHeight + 20) + 'px';
+            }
+        }
+
+        infoBlockImgs.forEach(item => {
+            item.addEventListener('keydown', e => {
+                if (e.key === 'Enter') {
+                    let clonedImg = e.target.cloneNode();
+                    clonedImg.classList.add('img-opened');
+                    instructionsImgWrapper.prepend(clonedImg)
+                    popup.classList.toggle('popup-active');
+                    body.classList.toggle('body-lock');
+                }
+            });
+            item.addEventListener('focus', e => {
+                onInfoImgFocusBlur(e.target);
+            });
+            item.addEventListener('blur', e => {
+                onInfoImgFocusBlur(e.target);
+            });
+        })
     
         expandBtn.forEach(item => { 
             item.addEventListener('click', e => {
@@ -106,6 +140,14 @@ document.addEventListener('DOMContentLoaded', () => {
             instructionsImgWrapper.firstElementChild.remove();
             popup.classList.toggle('popup-active');
             body.classList.toggle('body-lock');
+        })
+        instructionsImgWrapper.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                e.target.classList.remove('img-opened');
+                instructionsImgWrapper.firstElementChild.remove();
+                popup.classList.toggle('popup-active');
+                body.classList.toggle('body-lock');
+            }
         })
     
         if (instructionsCards.length % 2 !== 0) {

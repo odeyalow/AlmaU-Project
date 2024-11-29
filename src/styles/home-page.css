@@ -101,7 +101,7 @@ body{
             align-items: center;
     gap: 5px;
 }
-.hero__scroll-btn:hover{
+.hero__scroll-btn:hover, .hero__scroll-btn:focus{
     -webkit-transform: translateY(15%);
         -ms-transform: translateY(15%);
             transform: translateY(15%);
@@ -146,32 +146,49 @@ body{
     max-width: 330px;
     min-height: 300px;
     border-radius: 25px;
+    background-color: var(--basic-blue);
     -webkit-box-shadow: 0 10px 0px 0px var(--basic-blue-2);
-            box-shadow: 0 10px 0px 0px var(--basic-blue-2);
-    -webkit-filter: drop-shadow(0 0 5px var(--basic-dark-2));
-            filter: drop-shadow(0 0 5px var(--basic-dark-2));
+            box-shadow: 0 9px 0px 0px var(--basic-blue-2);
+    /* -webkit-filter: drop-shadow(0 0 5px var(--basic-dark-2));
+            filter: drop-shadow(0 0 5px var(--basic-dark-2)); */
     -webkit-transition: var(--transition-fast);
     -o-transition: var(--transition-fast);
     transition: var(--transition-fast);
 }
-.info__card:hover{
+.info__card:hover, .info__card:focus-visible{
     -webkit-transform: translateY(-1%);
         -ms-transform: translateY(-1%);
             transform: translateY(-1%);
-    -webkit-filter: drop-shadow(0 5px 10px var(--basic-dark-2));
-            filter: drop-shadow(0 5px 10px var(--basic-dark-2));
+    /* -webkit-filter: drop-shadow(0 5px 10px var(--basic-dark-2));
+            filter: drop-shadow(0 5px 10px var(--basic-dark-2)); */
+}
+.info__card-link-wrapper:focus .info__card {   
+    -webkit-transform: translateY(-1%);
+        -ms-transform: translateY(-1%);
+            transform: translateY(-1%);
+    /* -webkit-filter: drop-shadow(0 5px 10px var(--basic-dark-2));
+            filter: drop-shadow(0 5px 10px var(--basic-dark-2)); */
+}
+.info__card-link-wrapper:focus{
+    outline: none;
 }
 .info__card:active{
     -webkit-transform: translateY(0%);
         -ms-transform: translateY(0%);
             transform: translateY(0%);
-    -webkit-filter: drop-shadow(0 0 5px var(--basic-dark-2));
-            filter: drop-shadow(0 0 5px var(--basic-dark-2));
+    /* -webkit-filter: drop-shadow(0 0 5px var(--basic-dark-2));
+            filter: drop-shadow(0 0 5px var(--basic-dark-2)); */
 }
 .info__card:hover .info__card-icon-wrapper{
     padding: 2em;
 }
 .info__card:hover .info__card-icon{
+    width: 55px;
+}
+.info__card-link-wrapper:focus .info__card-icon-wrapper{
+    padding: 2em;
+}
+.info__card-link-wrapper:focus .info__card-icon{
     width: 55px;
 }
 .info__card-header {

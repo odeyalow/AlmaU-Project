@@ -94,7 +94,13 @@ body {
     right: -1.5em;
     background: url('/src/imgs/icons/arrow-2.svg') no-repeat;
 }
-.drop-down-menu:hover > .item__drop-down-menu, .drop-down-menu:focus > .item__drop-down-menu{
+.drop-down-menu:hover > .item__drop-down-menu{
+    visibility: visible;
+    opacity: 1;
+    padding-top: 3em;
+}
+.drop-down-menu-active{
+    visibility: visible;
     opacity: 1;
     padding-top: 3em;
 }
@@ -153,6 +159,7 @@ body {
     -o-transition: var(--transition-fast);
     transition: var(--transition-fast);
     opacity: 0;
+    visibility: hidden;
 }
 .menu-item{
     font-size: 2em;
@@ -532,5 +539,9 @@ body {
 }
 .header__logo:hover, .social-icon:hover, .footer__logo:hover{
     opacity: 75%;
+}
+[tabindex]:focus-visible {
+    outline: 5px solid #31CB00;
+    border-radius: auto;
 }
 /* ALL */

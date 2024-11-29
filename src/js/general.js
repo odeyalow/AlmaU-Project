@@ -3,6 +3,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const langBtn = document.querySelector('.lang-btn'),
         langOptions = langBtn.querySelectorAll('.item__drop-down-menu .menu-item'),
+        platformsBtn = document.querySelector('.second'),
+        platformOptions = document.querySelectorAll('.item-link'),
+        dropDownMenu = document.querySelectorAll('.item__drop-down-menu'),
         selectedLangText = document.querySelector('.selected-lang__text'),
         menuOpenBtn = document.querySelector('.menu-open__btn'),
         menuCloseBtn = document.querySelector('.menu-close__btn'),
@@ -29,6 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     langOptions.forEach(option => {
         option.addEventListener('click', () => onLangSelect(option));
+    })
+    langOptions.forEach(option => {
+        option.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                onLangSelect(option)
+            }
+        });
     })
 
     if(window.innerWidth <= 770){
@@ -63,4 +73,25 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior:'smooth'
         });
     })
+
+    const onItemFocus = (focusItem, dropMenu) => {
+        focusItem.addEventListener('focus', () => {
+            dropMenu.style.visibility="visible";
+            dropMenu.style.opacity="1";
+            dropMenu.style.paddingTop="3em"
+        })
+    }
+
+    const onItemBlur = (blurItem, dropMenu) => {
+        blurItem.addEventListener('blur', () => {
+            dropMenu.style.visibility="hidden";
+            dropMenu.style.opacity="0";
+            dropMenu.style.paddingTop="0";
+        })
+    }
+
+    onItemFocus(langBtn, dropDownMenu[0]);
+    onItemFocus(platformsBtn, dropDownMenu[1]);
+    onItemBlur(langOptions[langOptions.length-1], dropDownMenu[0]);
+    onItemBlur(platformOptions[platformOptions.length-1].children[0], dropDownMenu[1]);
 })
