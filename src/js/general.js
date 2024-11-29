@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             option.classList.remove('active-lang');
         });
         lang.classList.add('active-lang');
-        langOptions.forEach(option => {
+        langOptions.forEach(() => {
             selectedLangText.textContent = lang.textContent;
         });
     }
@@ -75,18 +75,45 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const onItemFocus = (focusItem, dropMenu) => {
+        let isMouseDown = false;
+        focusItem.addEventListener('mousedown', () => {
+            isMouseDown = true;
+        })
         focusItem.addEventListener('focus', () => {
-            dropMenu.style.visibility="visible";
-            dropMenu.style.opacity="1";
-            dropMenu.style.paddingTop="3em"
+            if (!isMouseDown) {
+                dropMenu.style.visibility="visible";
+                dropMenu.style.opacity="1";
+                dropMenu.style.paddingTop="3em";
+            }
+            isMouseDown = false;
+        })
+
+        focusItem.addEventListener('touchstart', () => {
+            if (!isMouseDown) {
+                dropMenu.style.visibility="visible";
+                dropMenu.style.opacity="1";
+                dropMenu.style.paddingTop="3em";
+            }
         })
     }
-
     const onItemBlur = (blurItem, dropMenu) => {
+        let isMouseDown = false;
+        blurItem.addEventListener('mousedown', () => {
+            isMouseDown = true;
+        })
         blurItem.addEventListener('blur', () => {
-            dropMenu.style.visibility="hidden";
-            dropMenu.style.opacity="0";
-            dropMenu.style.paddingTop="0";
+            if (!isMouseDown) {
+                dropMenu.style.visibility="hidden";
+                dropMenu.style.opacity="0";
+                dropMenu.style.paddingTop="0";
+            }
+        })
+        blurItem.addEventListener('touchstart', () => {
+            if (!isMouseDown) {
+                dropMenu.style.visibility="visible";
+                dropMenu.style.opacity="1";
+                dropMenu.style.paddingTop="3em";
+            }
         })
     }
 
