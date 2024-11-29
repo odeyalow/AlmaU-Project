@@ -482,15 +482,38 @@ body {
 
 /* SIDE BUTTONS */
 .side__btns--block {
+    width: 100%;
+    max-width: 80px;
     display: flex;
     flex-direction: column;
+    gap: 2.5em;
+    position: fixed;
+    bottom: 5em;
+    right: 3em;
 }
 .scroll-to-top__btn {
     max-width: 80px;
     height: 80px;
-    background-color: var(--basic-blue);
+    background-color: var(--basic-light-2);
+}
+.side__btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .support__btn {
+    max-width: 80px;
+    height: 80px;
+    background-color: var(--basic-blue);
+}
+.btn-icon{
+    width: 37px;
+}
+.scroll-to-top__btn .btn-icon {
+    transform: rotate(-90deg);
 }
 /* SIDE BUTTONS */
 
